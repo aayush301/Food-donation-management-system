@@ -1,0 +1,41 @@
+<main>
+	<%- include('../partials/donorSidebar') %>
+	
+	<div id="main-wrapper">
+		
+		<div class="bg-white shadow-sm p-3">
+			<span class="me-3" id="sidebar-toggler-btn"><i class="fas fa-bars"></i></span>
+			<h5 class="m-0 color-theme d-inline-block">Previous Donations</h5>
+		</div>
+		
+		<div class="col col-sm-10 col-12 m-auto my-4" style="max-height: 75%; overflow: auto;">
+			<table class="table table-info table-striped table-hover m-0 bg-white">
+				<thead>
+					<tr>
+						<th scope="col">#</th>
+						<th scope="col">Food type</th>
+						<th scope="col">Quantity</th>
+						<th scope="col">Status</th>
+						<th scope="col">Cooking Time</th>
+						<th scope="col">Agent assigned</th>
+						<th scope="col">Collection Time</th>
+					</tr>
+				</thead>
+				<tbody>
+					<% for(let i=0; i<previousDonations.length; i++) { %>
+						<tr>
+							<th scope="row"> <%= i+1 %> </th>
+							<td> <%= previousDonations[i].foodType %> </td>
+							<td> <%= previousDonations[i].quantity %> </td>
+							<td class="fw-bold text-<%= previousDonations[i].status %>"> <%= previousDonations[i].status %> </td>
+							<td> <%= previousDonations[i].cookingTime.toLocaleString("en-IN", { dateStyle: "medium", timeStyle: "short"}) %> </td>
+							<td> <%= previousDonations[i].agent.firstName + " " + previousDonations[i].agent.lastName %> </td>
+							<td> <%= previousDonations[i].collectionTime.toLocaleString("en-IN", { dateStyle: "medium", timeStyle: "short"}) %> </td>
+						</tr>
+					<% } %>
+				</tbody>
+			</table>
+		</div>
+		
+	</div>
+</main>

@@ -1,0 +1,39 @@
+<main>
+	<%- include('../partials/adminSidebar') %>
+	
+	<div id="main-wrapper">
+		
+		<div class="bg-white shadow-sm p-3">
+			<span class="me-3" id="sidebar-toggler-btn"><i class="fas fa-bars"></i></span>
+			<h5 class="m-0 color-theme d-inline-block">Pending Donations</h5>
+		</div>
+		
+		<div class="col col-sm-10 col-12 m-auto my-4" style="max-height: 75%; overflow: auto;">
+			<table class="table table-info table-striped table-hover m-0 bg-white">
+				<thead>
+					<tr>
+						<th scope="col">#</th>
+						<th scope="col">Donor name</th>
+						<th scope="col">Food type</th>
+						<th scope="col">Quantity</th>
+						<th scope="col">Status</th>
+						<th scope="col">Actions</th>
+					</tr>
+				</thead>
+				<tbody>
+					<% for(let i=0; i<pendingDonations.length; i++) { %>
+						<tr>
+							<th scope="row"> <%= i+1 %> </th>
+							<td> <%= pendingDonations[i].donor.firstName + " " + pendingDonations[i].donor.lastName %> </td>
+							<td> <%= pendingDonations[i].foodType %> </td>
+							<td> <%= pendingDonations[i].quantity %> </td>
+							<td class="fw-bold text-<%= pendingDonations[i].status %>"> <%= pendingDonations[i].status %> </td>
+							<td><a href="/admin/donation/view/<%= pendingDonations[i]._id %>" class="btn">View</a></td>
+						</tr>
+					<% } %>
+				</tbody>
+			</table>
+		</div>
+		
+	</div>
+</main>

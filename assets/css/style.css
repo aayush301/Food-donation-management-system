@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+:root
+{
+	--theme-color: #3f51b5;
+}
+
+body
+{
+	height: 100vh;
+	background-color: #f2f2f2;
+	font-family: 'Roboto', sans-serif;
+	overflow-x: hidden;
+}
+
+
+header
+{
+	background-color: var(--theme-color);
+	height: 50px;
+	font-weight: 500;
+}
+header .nav-link
+{
+	color: white !important;
+}
+header #navbarSupportedContent
+{
+	background-color: var(--theme-color);
+}
+header .nav-link:hover
+{
+	transition: 0.3s;
+	color: #ddd1d1 !important;
+}
+header .navbar-toggler:focus
+{
+	box-shadow: none;
+}
+
+.bg-img-1
+{
+	min-height: calc(100vh - 50px);
+	background: url("/assets/images/img-1.jpg") no-repeat center;
+	background-size: cover;
+}
+.bg-img-2
+{
+	min-height: calc(100vh - 50px);
+	background: url("/assets/images/img-2.jpg") no-repeat center;
+	background-size: cover;
+}
+
+.color-theme
+{
+	color: var(--theme-color);
+}
+
+.btn
+{
+	padding: 6px 15px;
+	font-size: 18px;
+	color: white;
+	background-color: var(--theme-color);
+	border-radius: 0px;
+}
+.btn-danger
+{
+	background-color: rgb(223, 28, 28);
+}
+.btn:hover
+{
+	box-shadow: 3px 4px 6px 0px grey;
+	color: white;
+}
+
+#carousel img
+{
+	width: 100vw;
+	height: calc(100vh - 50px);
+	object-fit: cover;
+	object-position: center;
+}
+#carousel .carousel-control-prev-icon, #carousel .carousel-control-next-icon
+{
+	transform: scaleX(1.5) scaleY(2);
+	background-color: #000000;
+	cursor: pointer;
+}
+
+
+.form-date-input
+{
+	display: block;
+    width: 100%;
+    padding: 6px;
+    border-radius: 4px;
+	border: 1px solid #ced4da;
+}
+.form-date-input:focus
+{
+	box-shadow: 0 0 0 0.25rem rgb(13 110 253 / 25%);
+	outline: none;
+}
+
+.text-pending
+{ color: rgb(243, 172, 18) !important; }
+.text-rejected
+{ color: red !important; }
+.text-accepted
+{ color: green !important; }
+.text-assigned
+{ color: blue !important; }
+.text-collected
+{ color: #3f51b5 !important; }
+
+
+.alerts-wrapper
+{
+	position: absolute;
+	right: 0px;
+	width: fit-content;
+	font-weight: bold;
+	animation: moveLeft 0.1s linear;
+	z-index: 100;
+}
+
+.alerts-wrapper .alert-danger
+{
+	color: white;
+	background-color: #e22a2a;
+}
+.alerts-wrapper .alert-success
+{
+	color: white;
+	background-color: #1fa64e;
+}
+
+
+@keyframes moveLeft {
+	from { right: -100px; }
+	to { right: 0px; }
+}

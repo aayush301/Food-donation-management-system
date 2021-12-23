@@ -1,0 +1,37 @@
+<main>
+	<%- include('../partials/agentSidebar') %>
+	
+	<div id="main-wrapper">
+		
+		<div class="bg-white shadow-sm p-3">
+			<span class="me-3" id="sidebar-toggler-btn"><i class="fas fa-bars"></i></span>
+			<h5 class="m-0 color-theme d-inline-block">Previous Collections</h5>
+		</div>
+		
+		<div class="col col-sm-10 col-12 m-auto my-4" style="max-height: 75%; overflow: auto;">
+			<table class="table table-info table-striped table-hover m-0 bg-white">
+				<thead>
+					<tr>
+						<th scope="col">#</th>
+						<th scope="col">Donor name</th>
+						<th scope="col">Address collected</th>
+						<th scope="col">Phone</th>
+						<th scope="col">Actions</th>
+					</tr>
+				</thead>
+				<tbody>
+					<% for(let i=0; i<previousCollections.length; i++) { %>
+						<tr>
+							<th scope="row"> <%= i+1 %> </th>
+							<td> <%= previousCollections[i].donor.firstName + " " + previousCollections[i].donor.lastName %> </td>
+							<td> <%= previousCollections[i].address %> </td>
+							<td> <%= previousCollections[i].phone %> </td>
+							<td><a href="/agent/collection/view/<%= previousCollections[i]._id %>" class="btn">View</a></td>
+						</tr>
+					<% } %>
+				</tbody>
+			</table>
+		</div>
+		
+	</div>
+</main>

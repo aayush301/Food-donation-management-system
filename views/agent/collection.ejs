@@ -1,0 +1,64 @@
+<main>
+	<%- include('../partials/agentSidebar') %>
+	
+	<div id="main-wrapper">
+		
+		<div class="bg-white shadow-sm p-3">
+			<span class="me-3" id="sidebar-toggler-btn"><i class="fas fa-bars"></i></span>
+			<h5 class="m-0 color-theme d-inline-block">Collection</h5>
+		</div>
+		
+		<div class="border m-4 my-3 p-4 bg-white rounded-2 shadow-sm">
+			<div class="mb-2">
+				<span>Donor Name:</span>
+				<span><%= collection.donor.firstName + " " + collection.donor.lastName %></span>
+			</div>
+			
+			<div class="mb-2">
+				<span>Food type:</span>
+				<span><%= collection.foodType %></span>
+			</div>
+			
+			<div class="mb-2">
+				<span>Quantity:</span>
+				<span><%= collection.quantity %></span>
+			</div>
+			
+			<div class="mb-2">
+				<span>Time of cooking:</span>
+				<span><%= collection.cookingTime.toLocaleString("en-IN", { dateStyle: "medium", timeStyle: "short"}) %></span>
+			</div>
+			
+			<div class="mb-2">
+				<span>Address to collect:</span>
+				<span><%= collection.address %></span>
+			</div>
+			
+			<div class="mb-2">
+				<span>Phone:</span>
+				<span><%= collection.phone %></span>
+			</div>
+			
+			<div class="mb-2">
+				<span>Status:</span>
+				<span class="fw-bold text-<%= collection.status %>"><%= collection.status %></span>
+			</div>
+			
+			<% if(collection.status == "assigned" && collection.adminToAgentMsg != "") { %>
+				<div class="mb-2">
+					<span>Message from Admin:</span>
+					<div class="ms-3"><%= collection.adminToAgentMsg %></div>
+				</div>
+			<% } %>
+			
+			<% if(collection.status == "collected") { %>
+				<div class="mb-2">
+					<span>Collection time:</span>
+					<span><%= collection.collectionTime.toLocaleString("en-IN", { dateStyle: "medium", timeStyle: "short"}) %></span>
+				</div>
+			<% } %>
+			
+		</div>
+		
+	</div>
+</main>

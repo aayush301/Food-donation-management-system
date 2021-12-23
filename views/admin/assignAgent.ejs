@@ -1,0 +1,43 @@
+<main>
+	<%- include('../partials/adminSidebar') %>
+	
+	<div id="main-wrapper">
+		
+		<div class="bg-white shadow-sm p-3">
+			<span class="me-3" id="sidebar-toggler-btn"><i class="fas fa-bars"></i></span>
+			<h5 class="m-0 color-theme d-inline-block">Assign agent</h5>
+		</div>
+		
+		<form action="/admin/donation/assign/<%= donation._id %>" method="POST" class="border m-4 my-3 p-4 bg-white rounded-2 shadow">
+			
+			<div class="row">
+				<div class="mb-4 col-sm-4">
+					<label for="donor" class="form-label">Donor name</label>
+					<input type="text" class="form-control" id="donor" value="<%= donation.donor.firstName + ' ' + donation.donor.lastName %>" disabled>
+				</div>
+				
+				<div class="mb-4 col-sm-8">
+					<label for="address" class="form-label">Address</label>
+					<input type="text" class="form-control" id="address" value= "<%= donation.address %>" disabled>
+				</div>
+			</div>
+			
+			<div class="mb-4">
+				<label for="agent" class="form-label">Select Agent</label>
+				<select name="agent" class="form-select" id="agent">
+					<% for(let i=0; i<agents.length; i++) { %>
+						<option value="<%= agents[i]._id %>"><%= agents[i].firstName + " " + agents[i].lastName %></option>
+					<% } %>
+				</select>
+			</div>
+			
+			<div class="mb-4">
+				<label for="msg" class="form-label">Message to Agent</label>
+				<textarea type="text" name="adminToAgentMsg" class="form-control" id="msg" placeholder="You can write here some msg.."></textarea>
+			</div>
+			
+			<button type="submit" class="btn w-75 d-block m-auto mt-4">Assign</button>
+		</form>
+		
+	</div>
+</main>
