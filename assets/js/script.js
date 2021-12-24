@@ -5,14 +5,6 @@ if(activeItem) {
 	activeItem.classList.add("active");
 }
 
-
-if(path.startsWith("/donor") || path.startsWith("/admin") || path.startsWith("/agent"))
-{
-	document.querySelector(".nav-link[href='/auth/login']").style.display = "none";
-	document.querySelector(".nav-link[href='/auth/signup']").style.display = "none";
-}
-
-
 window.setTimeout(() => {
 	let alertsWrapper = document.querySelector(".alerts-wrapper");
 	if(alertsWrapper) {

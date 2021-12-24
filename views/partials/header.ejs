@@ -6,13 +6,17 @@
 				aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 				<span><i class="fas fa-bars text-white"></i></span>
 			</button>
-			<div class="collapse navbar-collapse ps-2" id="navbarSupportedContent">
+			<div class="collapse navbar-collapse ps-2" id="navbarSupportedContent" style="z-index: 100;">
 				<ul class="navbar-nav ms-auto me-3">
 					<li class="nav-item"><a class="nav-link" href="/home/about-us">About us</a></li>
 					<li class="nav-item"><a class="nav-link" href="/home/mission">Our mission</a></li>
 					<li class="nav-item"><a class="nav-link" href="/home/contact-us">Contact us</a></li>
-					<li class="nav-item"><a class="nav-link" href="/auth/login">Login</a></li>
-					<li class="nav-item"><a class="nav-link" href="/auth/signup">Signup</a></li>
+					<% if(currentUser) { %>
+						<li class="user-icon"><%= currentUser.firstName[0] %></li>
+					<% } else { %>
+						<li class="nav-item"><a class="nav-link" href="/auth/login">Login</a></li>
+						<li class="nav-item"><a class="nav-link" href="/auth/signup">Signup</a></li>
+					<% } %>
 				</ul>
 			</div>
 		</div>

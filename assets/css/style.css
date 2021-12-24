@@ -33,6 +33,15 @@ header .nav-link:hover
 	transition: 0.3s;
 	color: #ddd1d1 !important;
 }
+header .user-icon
+{
+	padding: 0.4rem;
+    color: white !important;
+    border-radius: 50%;
+    border: 2px solid white;
+    width: 40px;
+    text-align: center;
+}
 header .navbar-toggler:focus
 {
 	box-shadow: none;
