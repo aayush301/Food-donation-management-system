@@ -74,7 +74,7 @@ For running the application:
 - You should have a MongoDB database.
 - You should have a code editor (preferred: VS Code)
 
-## Steps to run the application
+## Installation and Setup
 1. Download the source code in the desired location on your system.
 2. Open the code in your code editor.
 3. To install all the dependencies (listed in package.json file) in your project, go to terminal and type the following command and hit enter:
