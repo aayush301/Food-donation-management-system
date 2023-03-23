@@ -1,7 +1,7 @@
 # Food Donation Management System
 
 A web application which is useful for management of food donation and collection activities.  
-[View Demo](https://food-aid-aayush.herokuapp.com/)
+[View Demo](https://food-aid.onrender.com/)
 
 <img src="https://user-images.githubusercontent.com/86913048/226953269-e6ae0484-ab78-4c77-b199-aef793502d8d.png" width="70%">
 
