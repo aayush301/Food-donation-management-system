@@ -7,13 +7,30 @@ A web application which is useful for management of food donation and collection
 
 ## Table of Contents
 
+- [Installation and setup](#installation-and-setup)
 - [Features](#features)
 - [Technologies used](#technologies-used)
 - [npm packages used](#npm-packages-used)
 - [Prerequisites](#prerequisites)
-- [Installation and setup](#installation-and-setup)
 - [Useful Links](#useful-links)
 - [Contact](#contact)
+
+## Installation and Setup
+
+1. Install all the dependencies
+   ```sh
+   npm install
+   ```
+2. Create a file named ".env" and enter the following credentials:
+   ```js
+   MONGO_URI = yourmongouri;
+   ```
+3. Run the web application
+   ```sh
+   npm start
+   ```
+4. Open http://localhost:5000
+5. You need to first signup and then login to run the application.
 
 ## Features
 
@@ -82,23 +99,6 @@ For running the application:
 - Node.js must be installed on the system.
 - You should have a MongoDB database.
 - You should have a code editor (preferred: VS Code)
-
-## Installation and Setup
-
-1. Install all the dependencies
-   ```sh
-   npm install
-   ```
-2. Create a file named ".env" and enter the following credentials:
-   ```js
-   MONGO_URI = yourmongouri;
-   ```
-3. Run the web application
-   ```sh
-   npm start
-   ```
-4. Open http://localhost:5000
-5. You need to first signup and then login to run the application.
 
 ## Useful Links
 
